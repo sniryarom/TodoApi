@@ -1,0 +1,8 @@
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp1.1/TodoApi.deps.json
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp1.1/TodoApi.runtimeconfig.json
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp1.1/TodoApi.runtimeconfig.dev.json
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp1.1/TodoApi.dll
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp1.1/TodoApi.pdb
+/Users/snir/dev/projects/TodoApi/obj/Debug/netcoreapp1.1/TodoApi.AssemblyInfo.cs
+/Users/snir/dev/projects/TodoApi/obj/Debug/netcoreapp1.1/TodoApi.dll
+/Users/snir/dev/projects/TodoApi/obj/Debug/netcoreapp1.1/TodoApi.pdb

@@ -1,0 +1,10 @@
+/Users/snir/dev/projects/TodoApi/obj/Debug/netcoreapp2.0/TodoApi.csproj.CoreCompileInputs.cache
+/Users/snir/dev/projects/TodoApi/obj/Debug/netcoreapp2.0/TodoApi.AssemblyInfoInputs.cache
+/Users/snir/dev/projects/TodoApi/obj/Debug/netcoreapp2.0/TodoApi.AssemblyInfo.cs
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp2.0/TodoApi.deps.json
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp2.0/TodoApi.runtimeconfig.json
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp2.0/TodoApi.runtimeconfig.dev.json
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp2.0/TodoApi.dll
+/Users/snir/dev/projects/TodoApi/bin/Debug/netcoreapp2.0/TodoApi.pdb
+/Users/snir/dev/projects/TodoApi/obj/Debug/netcoreapp2.0/TodoApi.dll
+/Users/snir/dev/projects/TodoApi/obj/Debug/netcoreapp2.0/TodoApi.pdb
