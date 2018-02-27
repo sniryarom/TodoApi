@@ -13,7 +13,16 @@ namespace TodoApi.Models
             _context = context;
 
             if( _context.TodoItems.Count() == 0)
-                Add(new TodoItem { Text = "Item1", User = "Unknown" });
+            {
+                Add(new TodoItem
+                {
+                    Text = "Item1",
+                    User = "Snir",
+                    CreateDate = DateTime.Now.ToShortDateString(),
+                    IsPrivate = false,
+                    IsComplete = false
+                });
+            }      
         }
 
         public IEnumerable<TodoItem> GetAll()
