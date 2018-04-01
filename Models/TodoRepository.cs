@@ -14,14 +14,16 @@ namespace TodoApi.Models
 
             if( _context.TodoItems.Count() == 0)
             {
-                Add(new TodoItem
-                {
-                    Text = "Item1",
-                    User = "Snir",
-                    CreateDate = DateTime.Now.ToShortDateString(),
-                    IsPrivate = false,
-                    IsComplete = false
-                });
+                for (int i = 0; i <= 5; i++) {
+                    Add(new TodoItem
+                    {
+                        Text = "Item "+ (i+1).ToString(),
+                        User = "Snir",
+                        CreateDate = DateTime.Now.ToShortDateString(),
+                        IsPrivate = false,
+                        IsComplete = false
+                    });    
+                }
             }      
         }
 
