@@ -83,17 +83,18 @@ namespace TodoApi.Controllers
 
         // DELETE api/todo/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(long id, [FromQuery]int delay)
+        public IEnumerable<TodoItem> Delete(long id, [FromQuery]int delay)
         {
             handleDelay(delay);
             var todo = _todoRepository.Find(id);
             if (todo == null)
             {
-                return NotFound();
+                //return NotFound();
             }
 
             _todoRepository.Remove(id);
-            return new NoContentResult();
+            //return new NoContentResult();
+            return _todoRepository.GetAll();
         }
 
         private void handleDelay(int delay)

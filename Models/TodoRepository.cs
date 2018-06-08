@@ -21,7 +21,7 @@ namespace TodoApi.Models
                         User = "Snir",
                         CreateDate = DateTime.Now.ToShortDateString(),
                         IsPrivate = false,
-                        IsComplete = false
+                        IsComplete = (i % 2 == 0) ? true : false
                     });    
                 }
             }      
