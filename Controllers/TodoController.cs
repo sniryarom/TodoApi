@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TodoApi.Models;
+using System;
 using Microsoft.AspNetCore.Cors;
 
 namespace TodoApi.Controllers
@@ -41,44 +42,50 @@ namespace TodoApi.Controllers
 
         // POST api/todo
         [HttpPost]
-        public IActionResult Create([FromBody] TodoItem item, [FromQuery]int delay)
+        public IEnumerable<TodoItem> Create([FromBody] TodoItem item, [FromQuery]int delay)
         {
             handleDelay(delay);
 
-            if (item == null)
+            if (item != null)
             {
-                return BadRequest();
+                //set some default values for the new item
+                item.IsPrivate = false;
+                item.User = "Snir";
+                item.CreateDate = DateTime.Now.ToShortDateString();
+
+                _todoRepository.Add(item);
             }
 
-            _todoRepository.Add(item);
-
-            return CreatedAtRoute("GetTodo", new { id = item.Key }, item);
+            return _todoRepository.GetAll();
+            //return CreatedAtRoute("GetTodo", new { id = item.Key }, item);
         }
 
         // PUT api/todo/5
         [HttpPut("{id}")]
-        public IActionResult Update(long id, [FromBody] TodoItem item, [FromQuery]int delay)
+        public IEnumerable<TodoItem> Update(long id, [FromBody] TodoItem item, [FromQuery]int delay)
         {
             handleDelay(delay);
 
             if (item == null || item.Key != id)
             {
-                return BadRequest();
+                //return BadRequest();
+                return null;
             }
 
             var todo = _todoRepository.Find(id);
-            if (todo == null)
+            if (todo != null)
             {
-                return NotFound();
+                //return NotFound();
+                todo.IsComplete = item.IsComplete;
+                todo.Text = item.Text;
+                todo.User = item.User;
+                todo.IsPrivate = item.IsPrivate;
+
+                _todoRepository.Update(todo);
             }
 
-            todo.IsComplete = item.IsComplete;
-            todo.Text = item.Text;
-            todo.User = item.User;
-            todo.IsPrivate = item.IsPrivate;
-
-            _todoRepository.Update(todo);
-            return new NoContentResult();
+            //return new NoContentResult();
+            return _todoRepository.GetAll();
         }
 
         // DELETE api/todo/5
@@ -87,12 +94,12 @@ namespace TodoApi.Controllers
         {
             handleDelay(delay);
             var todo = _todoRepository.Find(id);
-            if (todo == null)
+            if (todo != null)
             {
                 //return NotFound();
+                _todoRepository.Remove(id);
             }
 
-            _todoRepository.Remove(id);
             //return new NoContentResult();
             return _todoRepository.GetAll();
         }
